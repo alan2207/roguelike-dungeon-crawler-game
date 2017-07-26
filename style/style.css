@@ -1,0 +1,66 @@
+body {
+    background: black;
+    color: white;
+    font-family: 'Seymour One', sans-serif;
+    text-align: center;
+}
+
+button {
+    padding: 5px;
+    margin: 10px;
+    background: white;
+}
+
+
+.cell {
+    height: 1.4em;
+    width: 1.4em;
+    border: 1px solid #d6d1d1;
+    background: #c11407;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.space {
+    background: #d6d1d1;
+    border: none;
+}
+
+.darken {
+    background: black;
+    border: none;
+}
+
+
+.player {
+    background: black;
+    border-radius: 100%;
+}
+
+.monster {
+    background: #ff503d;
+}
+
+.health {
+    background: limegreen;
+}
+
+.weapon {
+    background: silver;
+}
+
+#info {
+    text-align: center;
+}
+
+.info-item {
+    margin: 10px;
+}
+
+
+footer {
+    margin-top: 30px;
+}
