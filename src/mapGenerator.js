@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import {randomRange} from './helpers.js';
+
 
 const GRID_HEIGHT = 30;
 const GRID_WIDTH = 50;
@@ -23,10 +24,10 @@ function createDungeon() {
     // get random values for the first room:
     let [min, max] = ROOM_SIZE_RANGE;
     const firstRoom = {
-        x: _.random(1, dungeonOptions.GRID_WIDTH - max - 15),
-        y: _.random(1, dungeonOptions.GRID_HEIGHT - max - 15),
-        height: _.random(min, max),
-        width: _.random(min, max),
+        x: randomRange(1, dungeonOptions.GRID_WIDTH - max - 15),
+        y: randomRange(1, dungeonOptions.GRID_HEIGHT - max - 15),
+        height: randomRange(min, max),
+        width: randomRange(min, max),
     };
 
     function isValidRoomPlacement(grid, {x, y, width = 1, height = 1}) {
@@ -84,38 +85,38 @@ function createDungeon() {
         const roomValues = [];
 
         // creating northern room:
-        const north = {height: _.random(min, max), width: _.random(min, max)};
-        north.x = _.random(x, x + width - 1);
+        const north = {height: randomRange(min, max), width: randomRange(min, max)};
+        north.x = randomRange(x, x + width - 1);
         north.y = y - north.height - 1;
-        north.doorx = _.random(north.x, (Math.min(north.x + north.width, x + width)) - 1);
+        north.doorx = randomRange(north.x, (Math.min(north.x + north.width, x + width)) - 1);
         north.doory = y - 1;
         roomValues.push(north);
 
 
         // creating eastern room:
-        const east = {height: _.random(min, max), width: _.random(min, max)};
+        const east = {height: randomRange(min, max), width: randomRange(min, max)};
         east.x = x + width + 1;
-        east.y = _.random(y, height + y - 1);
+        east.y = randomRange(y, height + y - 1);
         east.doorx = east.x - 1;
-        east.doory = _.random(east.y, (Math.min(east.y + east.height, y + height)) - 1);
+        east.doory = randomRange(east.y, (Math.min(east.y + east.height, y + height)) - 1);
         roomValues.push(east);
 
 
         // creating southern room:
-        const south = {height: _.random(min, max), width: _.random(min, max)};
-        south.x = _.random(x, x + width - 1);
+        const south = {height: randomRange(min, max), width: randomRange(min, max)};
+        south.x = randomRange(x, x + width - 1);
         south.y = y + height + 1;
-        south.doorx = _.random(south.x, (Math.min(south.x + south.width, x + width)) - 1);
+        south.doorx = randomRange(south.x, (Math.min(south.x + south.width, x + width)) - 1);
         south.doory = y + height;
         roomValues.push(south);
 
 
         // creating western room:
-        const west = {height: _.random(min, max), width: _.random(min, max)};
+        const west = {height: randomRange(min, max), width: randomRange(min, max)};
         west.x = x - west.width - 1;
-        west.y = _.random(y, height + y - 1);
+        west.y = randomRange(y, height + y - 1);
         west.doorx = x - 1;
-        west.doory = _.random(west.y, (Math.min(west.y + west.height, y + height)) - 1);
+        west.doory = randomRange(west.y, (Math.min(west.y + west.height, y + height)) - 1);
         roomValues.push(west);
         
         

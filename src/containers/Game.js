@@ -1,6 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
-
+import {randomRange} from '../helpers.js';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
@@ -16,10 +15,6 @@ import {populate,
 
 
 import ControlPanel from '../components/ControlPanel';
-
-// TODO:
-// optimize moving by using map as separate component that does not update instead of rerender the whole map over and over?
-// syle sprites
 
 
 
@@ -154,8 +149,8 @@ class Game extends React.Component {
         const gridHeight = grid.length, gridWidth = grid[0].length;
 
         while (count) {
-            let y = _.random(1, gridHeight - 1);
-            let x = _.random(1, gridWidth - 1);
+            let y = randomRange(1, gridHeight - 1);
+            let x = randomRange(1, gridWidth - 1);
 
             if(grid[y][x].type === 'space') {
                 this.props.actions.populate({type, y, x});
@@ -180,8 +175,8 @@ class Game extends React.Component {
         }
 
         while (!player) {
-            let y = _.random(1, gridHeight - 1);
-            let x = _.random(1, gridWidth - 1);
+            let y = randomRange(1, gridHeight - 1);
+            let x = randomRange(1, gridWidth - 1);
 
             if(grid[y][x].type === 'space') {
 
