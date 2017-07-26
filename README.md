@@ -1,39 +1,18 @@
-# react-redux-starter
+# Roguelike Game 
 
-Boilerplate for creating React apps inspired by [ReduxSimpleStarter](https://github.com/StephenGrider/ReduxSimpleStarter)...
+Roguelike game built with React.
 
-## Features:
+### User Stories:
+* The map, player, and other items are generated randomly.
+* When dark mode is on, only small portion of the map around the player is visible.
+* The player can toggle dark mode.
+* The player has health, level and weapon (ammo).
+* The game has 5 levels.
+* The player proceeds to the next level when gained XPs.
+* XPs are gianed by killing monsters.
+* If the player has weapon, he will suffer less damage when fighting with monster.
+* The player can carry no more than 5 weapons at once.
+* The player cannot have more than 100 health value.
 
-* start developing react apps quickly...
 
-* redux included
 
-* react-router v3 included
-
-* testing with mocha and chai included
-
-* easy deploy apps to github-pages
-
-* bootstrap included
-
-* lodash included
-
-### Usage:
-
-* Download the package to your local machine:       
-`git clone https://github.com/alan2207/react-redux-starter.git`
-
-* Install required dependencies:  
-`npm install`
-
-* To start the app locally:  
-`npm run start`
-
-* To build the app:   
-`npm run build`
-
-* To deploy the app to github-pages (remember to set homepage of the app in package.json):   
-`npm run deploy`
-
-* To test the app:   
-`npm run test` || `npm run test:watch`
